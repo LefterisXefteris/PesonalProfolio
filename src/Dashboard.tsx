@@ -59,6 +59,9 @@ export function UserRepos() {
         <Card.Body color="fg.muted">
         Language: {userElement.language === null ? "none" : userElement.language}
         </Card.Body>
+        <Card.Body color="fg.warning">
+        Descriptipon: {userElement.description}
+        </Card.Body>
       </Card.Root>
       </Stack>
 
