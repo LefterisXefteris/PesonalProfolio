@@ -9,6 +9,7 @@ interface SideBarProps {
 export function SideBar({ username = 'LefterisXefteris'}: SideBarProps) {
     const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
     const [location, setLocation] = useState<string | null>(null);
+    const [profile, setProfile] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -25,6 +26,7 @@ export function SideBar({ username = 'LefterisXefteris'}: SideBarProps) {
                 const data = await response.json();
                 setAvatarUrl(data.avatar_url);
                 setLocation(data.location);
+                setProfile(data.profile);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'An error occurred');
             } finally {
@@ -53,7 +55,7 @@ export function SideBar({ username = 'LefterisXefteris'}: SideBarProps) {
                 />
               )}
               <VStack mt={4}>
-                <Heading size="md">Software Engineer</Heading>
+                <Heading size="md">{profile}</Heading>
                 <Text>{username}</Text>
                 <Text>{location}</Text>
               </VStack>

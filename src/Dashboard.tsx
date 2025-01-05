@@ -46,7 +46,7 @@ export function UserRepos() {
   }
 
   const userElements = repos.map((userElement) => (
-
+<Box>
     <Stack direction={{ base: "column", md: "row" }} gap="5">
       <Card.Root width="320px" key={userElement.id}>
         <Card.Header>
@@ -60,10 +60,11 @@ export function UserRepos() {
         Language: {userElement.language === null ? "none" : userElement.language}
         </Card.Body>
         <Card.Body color="fg.warning">
-        Descriptipon: {userElement.description}
+          {userElement.description}
         </Card.Body>
       </Card.Root>
       </Stack>
+      </Box>
 
   ));
 
