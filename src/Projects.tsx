@@ -11,6 +11,7 @@ interface Repository {
   description: string | null;
   stargazers_count: number;
   forks_count: number;
+  fork: boolean
   language: string | null;
 }
 
@@ -48,6 +49,9 @@ export function UserRepos() {
       </CardFooter>
       <CardBody color="orange.500">
         {userElement.description}
+      </CardBody>
+      <CardBody color="blue.500">
+        {userElement.fork? "Forked Repository" : "Original Repository"}
       </CardBody>
     </Card.Root>
   ));

@@ -7,6 +7,7 @@ interface GitHubProfile {
   avatar_url: string;
   name: string;
   location: string;
+  hireable: boolean;
 }
 
 export function SideBar() {
@@ -60,6 +61,7 @@ export function SideBar() {
             <Heading size="md">{info?.name || 'No name available'}</Heading>
             <Text>{info?.login || 'No username available'}</Text>
             <Text>{info?.location || 'No location available'}</Text>
+            <Text>{info?.hireable? "Available for hire":"False"}</Text>
           </VStack>
         </Box>
       </VStack>
